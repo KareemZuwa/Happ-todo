@@ -18,3 +18,24 @@ export const Container = styled.div`
   text-align: center;
   overflow-y: auto;
 `;
+
+/** LAYOUT STYLE */
+export const StyledHeader = styled.header`
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  padding-top: 4rem;
+`;
+
+export const StyledMain = styled.main`
+  margin: 0 auto;
+  max-width: 768px;
+  flex-grow: 1;
+  padding-top: 6rem;
+  padding-bottom: 3rem;
+`;
+
+export const StyledFooter = styled.footer`
+  flex-shrink: 0;
+  padding-bottom: 3rem;
+`;

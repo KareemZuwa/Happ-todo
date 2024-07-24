@@ -1,3 +1,9 @@
+import { StyledHeader } from "../styles/styles";
+
 export const Header = () => {
-  return <div>Header</div>;
+  return (
+    <StyledHeader>
+      <div>Header</div>
+    </StyledHeader>
+  );
 };
