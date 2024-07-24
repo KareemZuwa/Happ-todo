@@ -3,7 +3,7 @@
 function App() {
   return (
     <>
-      <h1 style={{ color: "white" }}>Happ</h1>
+      <h1 style={{ color: "white", fontWeight: 400 }}>Happ</h1>
     </>
   );
 }
