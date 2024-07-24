@@ -1,3 +1,9 @@
+import { StyledMain } from "../styles/styles";
+
 export const Main = () => {
-  return <div>Main</div>;
+  return (
+    <StyledMain>
+      <div>Main</div>
+    </StyledMain>
+  );
 };

@@ -1,10 +1,15 @@
+import { Footer } from "./layout/Footer";
+import { Header } from "./layout/Header";
+import { Main } from "./layout/Main";
 import { Container } from "./styles/styles";
 
 function App() {
   return (
     <>
       <Container>
-        <h1 style={{ color: "white", fontWeight: 400 }}>Happ</h1>
+        <Header />
+        <Main />
+        <Footer />
       </Container>
     </>
   );

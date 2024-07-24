@@ -1,3 +1,9 @@
+import { StyledFooter } from "../styles/styles";
+
 export const Footer = () => {
-  return <div>Footer</div>;
+  return (
+    <StyledFooter>
+      <div>Footer</div>
+    </StyledFooter>
+  );
 };
