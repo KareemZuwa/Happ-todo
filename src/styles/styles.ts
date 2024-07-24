@@ -1,15 +1,4 @@
-import styled, { createGlobalStyle } from "styled-components";
-
-/** GLOBAL STYLE */
-export const GlobalStyle = createGlobalStyle`
-  body {
-    background-color: black;
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    font-family: Arial, Helvetica, sans-serif;
-  }
-`;
+import styled from "styled-components";
 
 /** WRAPPER CONTAINER STYLE */
 export const Container = styled.div`
