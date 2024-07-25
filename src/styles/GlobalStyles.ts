@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { Theme } from "../types/interfaces";
 
-/** WRAPPER CONTAINER STYLE */
+/** WRAPPER CONTAINER STYLE COMPONENTS */
 export const Container = styled.div<{ theme: Theme }>`
   color: ${({ theme }) => theme.colors.offWhite};
   background: #5d4692;
@@ -17,7 +17,7 @@ export const Container = styled.div<{ theme: Theme }>`
   overflow-y: auto;
 `;
 
-/** LAYOUT STYLE */
+/** LAYOUT STYLE COMPONENTS*/
 export const StyledHeader = styled.header`
   flex-shrink: 0;
   display: flex;
@@ -37,3 +37,4 @@ export const StyledFooter = styled.footer`
   flex-shrink: 0;
   padding-bottom: 3rem;
 `;
+

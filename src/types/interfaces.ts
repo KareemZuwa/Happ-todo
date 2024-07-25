@@ -75,3 +75,8 @@ export type Action =
 /**
  * Interfaces used for defining props and states within the components directory.
  */
+
+export interface LineSvgProps {
+  marginLeft?: string;
+  marginRight?: string;
+}
