@@ -1,10 +1,44 @@
 /**
- * Extends Styled Component Palette interface
+ * Extends Styled Component interface
  * to include custom style definitions for the theme.
  */
 
 export interface Theme {
-  main: string;
+  breakpoints: themeBreakpoints;
+  background: themeBackground;
+  colors: themeColors;
+  fontSizes: themeFontsizes;
+  fontWeights: themeFontWeights;
+}
+
+//Colors//
+export interface themeColors {
+  offWhite: string;
+  purpur: string;
+}
+
+//Fonts//
+export interface themeFontsizes {
+  small: string;
+  medium: string;
+  large: string;
+}
+
+export interface themeFontWeights {
+  regular: number;
+  medium: number;
+  semibold: number;
+}
+
+export interface themeBreakpoints {
+  xs: number;
+  sm: number;
+  md: number;
+  lg: number;
+}
+
+export interface themeBackground {
+  gradient: string;
 }
 
 /**
