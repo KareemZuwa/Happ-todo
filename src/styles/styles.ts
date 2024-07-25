@@ -3,13 +3,9 @@ import { Theme } from "../types/interfaces";
 
 /** WRAPPER CONTAINER STYLE */
 export const Container = styled.div<{ theme: Theme }>`
-  color: ${({ theme }) => theme.main};
+  color: ${({ theme }) => theme.colors.offWhite};
   background: #5d4692;
-  background: linear-gradient(
-    137deg,
-    rgba(239, 136, 187, 1) 0%,
-    rgba(41, 24, 80, 1) 100%
-  );
+  background: ${({ theme }) => theme.background.gradient};
   height: 100vh;
   max-width: 1440px;
   margin: 0 auto;
