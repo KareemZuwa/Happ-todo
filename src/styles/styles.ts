@@ -1,7 +1,9 @@
 import styled from "styled-components";
+import { Theme } from "../types/interfaces";
 
 /** WRAPPER CONTAINER STYLE */
-export const Container = styled.div`
+export const Container = styled.div<{ theme: Theme }>`
+  color: ${({ theme }) => theme.main};
   background: #5d4692;
   background: linear-gradient(
     137deg,
