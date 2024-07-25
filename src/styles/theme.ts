@@ -14,9 +14,16 @@ export const theme: Theme = {
     rgba(41, 24, 80, 1) 100%
   )`,
   },
+  borders: {
+    md: 10,
+  },
   colors: {
     offWhite: "#EAE8EE",
     purpur: "#5D4692",
+    lightGrey: "#ffffff63",
+    darkGrey: "#09244B",
+    lightGreen: "#49ada2",
+    darkGreen: "#167a6f",
   },
   fontSizes: {
     small: "12px",

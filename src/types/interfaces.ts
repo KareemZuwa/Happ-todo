@@ -9,12 +9,17 @@ export interface Theme {
   colors: themeColors;
   fontSizes: themeFontsizes;
   fontWeights: themeFontWeights;
+  borders: themeBorderRadius;
 }
 
 //Colors//
 export interface themeColors {
   offWhite: string;
   purpur: string;
+  lightGrey: string;
+  darkGrey: string;
+  lightGreen: string;
+  darkGreen: string;
 }
 
 //Fonts//
@@ -39,6 +44,10 @@ export interface themeBreakpoints {
 
 export interface themeBackground {
   gradient: string;
+}
+
+export interface themeBorderRadius {
+  md: number;
 }
 
 /**
