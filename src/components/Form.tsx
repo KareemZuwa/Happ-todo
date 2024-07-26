@@ -1,5 +1,1 @@
-const Form = () => {
-  return <div></div>;
-};
-
-export default Form;
+export const Form = () => <div></div>;

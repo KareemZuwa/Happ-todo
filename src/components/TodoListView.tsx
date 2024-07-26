@@ -1,5 +1,1 @@
-const TodoListView = () => {
-  return <div></div>;
-};
-
-export default TodoListView;
+export const TodoListView = () => <div></div>;

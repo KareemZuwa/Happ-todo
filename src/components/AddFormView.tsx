@@ -1,5 +1,1 @@
-const AddFormView = () => {
-  return <div></div>;
-};
-
-export default AddFormView;
+export const AddFormView = () => <div></div>;
