@@ -40,26 +40,20 @@ export const StyledFooter = styled.footer`
 
 /*** TYPOGRAPHY STYLED COMPONENTS */
 
-export const Title = styled.h1<{ theme: Theme; fontWeight?: string | number }>`
+export const Title = styled.h1<{ theme: Theme; fontWeight?: number }>`
   font-size: 1.25rem;
   color: ${({ color, theme }) => color ?? theme.colors.offWhite};
   font-weight: ${({ fontWeight, theme }) =>
     fontWeight ?? theme.fontWeights.semibold};
 `;
-export const Subtitle = styled.h1<{
-  theme: Theme;
-  fontWeight?: string | number;
-}>`
+export const Subtitle = styled.h1<{ theme: Theme; fontWeight?: number }>`
   font-size: 1rem;
   color: ${({ color, theme }) => color ?? theme.colors.offWhite};
   font-weight: ${({ fontWeight, theme }) =>
     fontWeight ?? theme.fontWeights.medium};
 `;
 
-export const Paragraph = styled.p<{
-  theme: Theme;
-  fontWeight?: string | number;
-}>`
+export const Paragraph = styled.p<{ theme: Theme; fontWeight?: number }>`
   font-size: 0.75rem;
   color: ${({ color, theme }) => color ?? theme.colors.offWhite};
   font-weight: ${({ fontWeight, theme }) =>
