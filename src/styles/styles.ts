@@ -37,3 +37,25 @@ export const StyledFooter = styled.footer`
   flex-shrink: 0;
   padding-bottom: 3rem;
 `;
+
+/*** TYPOGRAPHY STYLED COMPONENTS */
+
+export const Title = styled.h1<{ theme: Theme; fontWeight?: string }>`
+  font-size: 1.25rem;
+  color: ${({ color, theme }) => color ?? theme.colors.offWhite};
+  font-weight: ${({ fontWeight, theme }) =>
+    fontWeight ?? theme.fontWeights.semibold};
+`;
+export const Subtitle = styled.h1<{ theme: Theme; fontWeight?: string }>`
+  font-size: 1rem;
+  color: ${({ color, theme }) => color ?? theme.colors.offWhite};
+  font-weight: ${({ fontWeight, theme }) =>
+    fontWeight ?? theme.fontWeights.medium};
+`;
+
+export const Paragraph = styled.p<{ theme: Theme; fontWeight?: string }>`
+  font-size: 0.75rem;
+  color: ${({ color, theme }) => color ?? theme.colors.offWhite};
+  font-weight: ${({ fontWeight, theme }) =>
+    fontWeight ?? theme.fontWeights.regular};
+`;
