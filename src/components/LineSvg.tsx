@@ -1,13 +1,13 @@
 import styled from "styled-components";
-import { Theme } from "../types/interfaces";
+import { theme } from "../styles/theme";
 
 const StyledLineSvg = styled.svg`
   padding-top: 1.5rem;
 `;
 
-const StyledLine = styled.line<{ theme: Theme }>`
-  fill: ${({ theme }) => theme.colors.offWhite};
-  stroke: ${({ theme }) => theme.colors.offWhite};
+const StyledLine = styled.line`
+  fill: ${theme.colors.offWhite};
+  stroke: ${theme.colors.offWhite};
   stroke-width: 4;
 `;
 

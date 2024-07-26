@@ -1,11 +1,11 @@
 import styled from "styled-components";
-import { Theme } from "../types/interfaces";
+import { theme } from "../styles/theme";
 
 /** WRAPPER CONTAINER STYLE COMPONENTS */
-export const Container = styled.div<{ theme: Theme }>`
-  color: ${({ theme }) => theme.colors.offWhite};
+export const Container = styled.div`
+  color: ${theme.colors.offWhite};
   background: #5d4692;
-  background: ${({ theme }) => theme.background.gradient};
+  background: ${theme.background.gradient};
   height: 100vh;
   max-width: 1440px;
   margin: 0 auto;
@@ -40,22 +40,19 @@ export const StyledFooter = styled.footer`
 
 /*** TYPOGRAPHY STYLED COMPONENTS */
 
-export const Title = styled.h1<{ theme: Theme; fontWeight?: number }>`
-  font-size: ${({ theme }) => theme.fontSizes.large};
-  color: ${({ color, theme }) => color ?? theme.colors.offWhite};
-  font-weight: ${({ fontWeight, theme }) =>
-    fontWeight ?? theme.fontWeights.semibold};
+export const Title = styled.h1<{ fontWeight?: number }>`
+  font-size: ${theme.fontSizes.large};
+  color: ${({ color }) => color ?? theme.colors.offWhite};
+  font-weight: ${({ fontWeight }) => fontWeight ?? theme.fontWeights.semibold};
 `;
-export const Subtitle = styled.h1<{ theme: Theme; fontWeight?: number }>`
-  font-size: ${({ theme }) => theme.fontSizes.medium};
-  color: ${({ color, theme }) => color ?? theme.colors.offWhite};
-  font-weight: ${({ fontWeight, theme }) =>
-    fontWeight ?? theme.fontWeights.medium};
+export const Subtitle = styled.h2<{ fontWeight?: number }>`
+  font-size: ${theme.fontSizes.medium};
+  color: ${({ color }) => color ?? theme.colors.offWhite};
+  font-weight: ${({ fontWeight }) => fontWeight ?? theme.fontWeights.medium};
 `;
 
-export const Paragraph = styled.p<{ theme: Theme; fontWeight?: number }>`
-  font-size: ${({ theme }) => theme.fontSizes.small};
-  color: ${({ color, theme }) => color ?? theme.colors.offWhite};
-  font-weight: ${({ fontWeight, theme }) =>
-    fontWeight ?? theme.fontWeights.regular};
+export const Paragraph = styled.p<{ fontWeight?: number }>`
+  font-size: ${theme.fontSizes.small};
+  color: ${({ color }) => color ?? theme.colors.offWhite};
+  font-weight: ${({ fontWeight }) => fontWeight ?? theme.fontWeights.regular};
 `;

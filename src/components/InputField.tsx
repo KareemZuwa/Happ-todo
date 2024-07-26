@@ -1,5 +1,1 @@
-const InputField = () => {
-  return <div></div>;
-};
-
-export default InputField;
+export const InputField = () => <div></div>;

@@ -1,5 +1,1 @@
-const UpdateDialog = () => {
-  return <div></div>;
-};
-
-export default UpdateDialog;
+export const UpdateDialog = () => <div></div>;

@@ -1,53 +1,60 @@
 /**
  * Extends Styled Component interface
- * to include custom style definitions for the theme.
+ * to include custom style definitions for the Theme.
  */
 
 export interface Theme {
-  breakpoints: themeBreakpoints;
-  background: themeBackground;
-  colors: themeColors;
-  fontSizes: themeFontsizes;
-  fontWeights: themeFontWeights;
-  borders: themeBorderRadius;
+  breakpoints: ThemeBreakpoints;
+  background: ThemeBackground;
+  colors: ThemeColors;
+  fontSizes: ThemeFontsizes;
+  fontWeights: ThemeFontWeights;
+  borders: ThemeBorderRadius;
+  shadows: ThemeShadows;
 }
 
 //Colors//
-export interface themeColors {
+export interface ThemeColors {
   offWhite: string;
-  purpur: string;
+  purpleLight: string;
+  purpleDark: string;
   lightGrey: string;
   darkGrey: string;
   lightGreen: string;
+  mainGreen: string;
   darkGreen: string;
 }
 
 //Fonts//
-export interface themeFontsizes {
+export interface ThemeFontsizes {
   small: string;
   medium: string;
   large: string;
 }
 
-export interface themeFontWeights {
+export interface ThemeFontWeights {
   regular: number;
   medium: number;
   semibold: number;
 }
 
-export interface themeBreakpoints {
+export interface ThemeBreakpoints {
   xs: number;
   sm: number;
   md: number;
   lg: number;
 }
 
-export interface themeBackground {
+export interface ThemeBackground {
   gradient: string;
 }
 
-export interface themeBorderRadius {
-  md: number;
+export interface ThemeBorderRadius {
+  md: string;
+}
+
+export interface ThemeShadows {
+  shade1: string;
 }
 
 /**
@@ -75,3 +82,10 @@ export type Action =
 /**
  * Interfaces used for defining props and states within the components directory.
  */
+
+export interface ButtonProps {
+  title: string;
+  onClick?: () => void;
+  type: "button" | "submit" | "reset" | undefined;
+  mode: "add" | "update";
+}
