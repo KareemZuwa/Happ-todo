@@ -1,9 +1,13 @@
+import { LineSvg } from "../components/LineSvg";
+import { Logo } from "../components/Logo";
 import { StyledHeader } from "../styles/styles";
 
 export const Header = () => {
   return (
     <StyledHeader>
-      <div>Header</div>
+      <LineSvg />
+      <Logo />
+      <LineSvg />
     </StyledHeader>
   );
 };
