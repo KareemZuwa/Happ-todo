@@ -1,12 +1,13 @@
-import { LineSvg } from "../components/LineSvg/LineSvg";
-import { StyledHeader } from "../styles/GlobalStyles";
+import { LineSvg } from "../components/LineSvg";
+import { Logo } from "../components/Logo";
+import { StyledHeader } from "../styles/styles";
 
 export const Header = () => {
   return (
     <StyledHeader>
-      <LineSvg marginRight={"3.5"} />
-      <div>Header</div>
-      <LineSvg marginLeft={"3.5"} />
+      <LineSvg />
+      <Logo />
+      <LineSvg />
     </StyledHeader>
   );
 };

@@ -1,4 +1,4 @@
-import { StyledFooter } from "../styles/GlobalStyles";
+import { StyledFooter } from "../styles/styles";
 
 export const Footer = () => {
   return (

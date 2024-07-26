@@ -37,4 +37,3 @@ export const StyledFooter = styled.footer`
   flex-shrink: 0;
   padding-bottom: 3rem;
 `;
-

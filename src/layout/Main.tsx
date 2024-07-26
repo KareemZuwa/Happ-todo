@@ -1,4 +1,4 @@
-import { StyledMain } from "../styles/GlobalStyles";
+import { StyledMain } from "../styles/styles";
 
 export const Main = () => {
   return (
