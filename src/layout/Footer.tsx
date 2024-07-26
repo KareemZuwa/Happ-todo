@@ -1,9 +1,9 @@
-import { StyledFooter } from "../styles/styles";
+import { Paragraph, StyledFooter } from "../styles/styles";
 
 export const Footer = () => {
   return (
     <StyledFooter>
-      <div>Footer</div>
+      <Paragraph>Copyright ©2024 Kazu</Paragraph>
     </StyledFooter>
   );
 };
