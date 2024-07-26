@@ -15,14 +15,16 @@ export const theme: Theme = {
   )`,
   },
   borders: {
-    md: 10,
+    md: "10px",
   },
   colors: {
     offWhite: "#EAE8EE",
-    purpur: "#5D4692",
+    purpleLight: "#5D4692",
+    purpleDark: "#291850",
     lightGrey: "#ffffff63",
     darkGrey: "#09244B",
     lightGreen: "#49ada2",
+    mainGreen: "#1B998B",
     darkGreen: "#167a6f",
   },
   fontSizes: {
@@ -34,5 +36,9 @@ export const theme: Theme = {
     regular: 400,
     medium: 500,
     semibold: 600,
+  },
+  shadows: {
+    shade1:
+      "0px 5px 5px -3px rgba(0,0,0,0.2), 0px 8px 10px 1px rgba(0,0,0,0.14), 0px 3px 14px 2px rgba(0,0,0,0.12)",
   },
 };
