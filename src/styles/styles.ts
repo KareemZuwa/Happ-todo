@@ -41,20 +41,20 @@ export const StyledFooter = styled.footer`
 /*** TYPOGRAPHY STYLED COMPONENTS */
 
 export const Title = styled.h1<{ theme: Theme; fontWeight?: number }>`
-  font-size: 1.25rem;
+  font-size: ${({ theme }) => theme.fontSizes.large};
   color: ${({ color, theme }) => color ?? theme.colors.offWhite};
   font-weight: ${({ fontWeight, theme }) =>
     fontWeight ?? theme.fontWeights.semibold};
 `;
 export const Subtitle = styled.h1<{ theme: Theme; fontWeight?: number }>`
-  font-size: 1rem;
+  font-size: ${({ theme }) => theme.fontSizes.medium};
   color: ${({ color, theme }) => color ?? theme.colors.offWhite};
   font-weight: ${({ fontWeight, theme }) =>
     fontWeight ?? theme.fontWeights.medium};
 `;
 
 export const Paragraph = styled.p<{ theme: Theme; fontWeight?: number }>`
-  font-size: 0.75rem;
+  font-size: ${({ theme }) => theme.fontSizes.small};
   color: ${({ color, theme }) => color ?? theme.colors.offWhite};
   font-weight: ${({ fontWeight, theme }) =>
     fontWeight ?? theme.fontWeights.regular};
