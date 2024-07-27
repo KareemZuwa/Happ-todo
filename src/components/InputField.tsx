@@ -7,12 +7,13 @@ const StyledInputField = styled.input<{ mode: string }>`
     mode === "dark" ? theme.colors.offWhite : theme.colors.darkGrey};
   font-size: ${theme.fontSizes.medium};
   background: none;
+  padding: 0.5rem;
   border: none;
   border-radius: 0;
   border-bottom: 1px solid
     ${({ mode }) =>
       mode === "dark" ? theme.colors.lightGrey : theme.colors.darkGrey};
-  padding: 0.5rem;
+
   &::placeholder {
     color: ${({ mode }) =>
       mode === "dark" ? theme.colors.lightGrey : theme.colors.middleGrey};
