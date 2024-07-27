@@ -2,10 +2,10 @@ import { Theme } from "../types/interfaces";
 
 export const theme: Theme = {
   breakpoints: {
-    xs: 366,
-    sm: 475,
-    md: 768,
-    lg: 1440,
+    xs: "366px",
+    sm: "475px",
+    md: "768px",
+    lg: "1440px",
   },
   background: {
     gradient: `linear-gradient(

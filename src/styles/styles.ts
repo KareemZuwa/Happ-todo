@@ -4,10 +4,10 @@ import { theme } from "../styles/theme";
 /** WRAPPER CONTAINER STYLE COMPONENTS */
 export const Container = styled.div`
   color: ${theme.colors.offWhite};
-  background: #5d4692;
+  background: ${theme.colors.purpleLight};
   background: ${theme.background.gradient};
   height: 100vh;
-  max-width: 1440px;
+  max-width: ${theme.breakpoints.lg};
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -27,7 +27,7 @@ export const StyledHeader = styled.header`
 
 export const StyledMain = styled.main`
   margin: 0 auto;
-  max-width: 768px;
+  max-width: ${theme.breakpoints.md};
   flex-grow: 1;
   padding-top: 6rem;
   padding-bottom: 3rem;
@@ -56,3 +56,5 @@ export const Paragraph = styled.p<{ fontWeight?: number }>`
   color: ${({ color }) => color ?? theme.colors.offWhite};
   font-weight: ${({ fontWeight }) => fontWeight ?? theme.fontWeights.regular};
 `;
+
+/** ICONS STYLED COMPONENTS */

@@ -40,10 +40,10 @@ export interface ThemeFontWeights {
 }
 
 export interface ThemeBreakpoints {
-  xs: number;
-  sm: number;
-  md: number;
-  lg: number;
+  xs: string;
+  sm: string;
+  md: string;
+  lg: string;
 }
 
 export interface ThemeBackground {
