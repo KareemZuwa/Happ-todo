@@ -4,9 +4,13 @@ export interface IconButtonProps {
   onClick: () => void;
   children: React.ReactNode;
   hoverStyle?: string;
+  focusStyle?: string;
 }
 
-const StyledIconButton = styled.button<{ $hoverStyle?: string }>`
+const StyledIconButton = styled.button<{
+  $hoverStyle?: string;
+  $focusStyle?: string;
+}>`
   background: none;
   border: none;
   margin: 0;
@@ -21,7 +25,7 @@ const StyledIconButton = styled.button<{ $hoverStyle?: string }>`
   }
 
   &:focus {
-    /* outline: none; Customize focus outline */
+    ${(props) => props.$focusStyle}
   }
 `;
 
@@ -29,8 +33,13 @@ export const IconButton = ({
   onClick,
   children,
   hoverStyle,
+  focusStyle,
 }: IconButtonProps) => (
-  <StyledIconButton onClick={onClick} $hoverStyle={hoverStyle}>
+  <StyledIconButton
+    onClick={onClick}
+    $hoverStyle={hoverStyle}
+    $focusStyle={focusStyle}
+  >
     {children}
   </StyledIconButton>
 );
