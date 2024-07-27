@@ -1,11 +1,5 @@
 import styled from "styled-components";
-
-export interface IconButtonProps {
-  onClick: () => void;
-  children: React.ReactNode;
-  hoverStyle?: string;
-  focusStyle?: string;
-}
+import { IconButtonProps } from "../types/interfaces";
 
 const StyledIconButton = styled.button<{
   $hoverStyle?: string;

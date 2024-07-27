@@ -5,6 +5,7 @@ import { theme } from "../styles/theme";
 const StyledInputField = styled.input<{ mode: string }>`
   color: ${({ mode }) =>
     mode === "dark" ? theme.colors.offWhite : theme.colors.darkGrey};
+  margin: ${({ mode }) => mode === "light" && "0rem .3rem"};
   font-size: ${theme.fontSizes.medium};
   background: none;
   padding: 0.5rem;
@@ -13,6 +14,7 @@ const StyledInputField = styled.input<{ mode: string }>`
   border-bottom: 1px solid
     ${({ mode }) =>
       mode === "dark" ? theme.colors.lightGrey : theme.colors.darkGrey};
+
   &::placeholder {
     color: ${({ mode }) =>
       mode === "dark" ? theme.colors.lightGrey : theme.colors.middleGrey};

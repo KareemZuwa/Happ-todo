@@ -97,3 +97,16 @@ export interface InputFieldProps {
   placeholder?: string;
   mode: "dark" | "light";
 }
+
+export interface IconButtonProps {
+  onClick: () => void;
+  children: React.ReactNode;
+  hoverStyle?: string;
+  focusStyle?: string;
+}
+
+export interface DialogProps {
+  onClose: () => void;
+  value: string;
+  onChange: (newValue: string) => void;
+}
