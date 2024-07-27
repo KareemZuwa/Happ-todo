@@ -19,6 +19,7 @@ export interface ThemeColors {
   purpleLight: string;
   purpleDark: string;
   lightGrey: string;
+  middleGrey: string;
   darkGrey: string;
   lightGreen: string;
   mainGreen: string;
@@ -88,4 +89,11 @@ export interface ButtonProps {
   onClick?: () => void;
   type: "button" | "submit" | "reset" | undefined;
   mode: "add" | "update";
+}
+
+export interface InputFieldProps {
+  value: string;
+  onInputChange: (value: string) => void;
+  placeholder?: string;
+  mode: "dark" | "light";
 }
