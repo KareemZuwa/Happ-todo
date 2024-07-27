@@ -19,6 +19,7 @@ export interface ThemeColors {
   purpleLight: string;
   purpleDark: string;
   lightGrey: string;
+  middleGrey: string;
   darkGrey: string;
   lightGreen: string;
   mainGreen: string;
