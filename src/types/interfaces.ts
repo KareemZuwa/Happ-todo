@@ -40,10 +40,10 @@ export interface ThemeFontWeights {
 }
 
 export interface ThemeBreakpoints {
-  xs: number;
-  sm: number;
-  md: number;
-  lg: number;
+  xs: string;
+  sm: string;
+  md: string;
+  lg: string;
 }
 
 export interface ThemeBackground {
@@ -96,4 +96,17 @@ export interface InputFieldProps {
   onInputChange: (value: string) => void;
   placeholder?: string;
   mode: "dark" | "light";
+}
+
+export interface IconButtonProps {
+  onClick: () => void;
+  children: React.ReactNode;
+  hoverStyle?: string;
+  focusStyle?: string;
+}
+
+export interface DialogProps {
+  onClose: () => void;
+  value: string;
+  onChange: (newValue: string) => void;
 }

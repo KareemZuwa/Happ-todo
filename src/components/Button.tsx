@@ -6,7 +6,8 @@ const StyledButton = styled.button<{
   mode: string;
 }>`
   padding: 0rem 5rem;
-  height: 2.875rem;
+  height: 3rem;
+  cursor: pointer;
   border-style: hidden;
   border-radius: ${theme.borders.md};
   box-shadow: ${theme.shadows.shade1};
