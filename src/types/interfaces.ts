@@ -90,3 +90,10 @@ export interface ButtonProps {
   type: "button" | "submit" | "reset" | undefined;
   mode: "add" | "update";
 }
+
+export interface InputFieldProps {
+  value: string;
+  onInputChange: (value: string) => void;
+  placeholder?: string;
+  mode: "dark" | "light";
+}

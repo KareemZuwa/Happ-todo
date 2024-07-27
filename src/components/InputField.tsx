@@ -1,12 +1,6 @@
 import styled from "styled-components";
+import { InputFieldProps } from "../types/interfaces";
 import { theme } from "../styles/theme";
-
-interface InputFieldProps {
-  value: string;
-  onInputChange: (value: string) => void;
-  placeholder?: string;
-  mode: "dark" | "light";
-}
 
 const StyledInputField = styled.input<{ mode: string }>`
   color: ${({ mode }) =>
