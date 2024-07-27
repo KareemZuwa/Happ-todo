@@ -13,7 +13,6 @@ const StyledInputField = styled.input<{ mode: string }>`
   border-bottom: 1px solid
     ${({ mode }) =>
       mode === "dark" ? theme.colors.lightGrey : theme.colors.darkGrey};
-
   &::placeholder {
     color: ${({ mode }) =>
       mode === "dark" ? theme.colors.lightGrey : theme.colors.middleGrey};
