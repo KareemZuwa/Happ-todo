@@ -9,8 +9,8 @@ export const DeleteIcon = ({ onDelete }: DeleteIconProps) => {
     <svg
       onClick={onDelete}
       xmlns="http://www.w3.org/2000/svg"
-      width="19"
-      height="19"
+      width="20"
+      height="20"
       viewBox="0 0 24 24"
     >
       <g fill="none" fillRule="evenodd">
