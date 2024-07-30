@@ -1,4 +1,4 @@
-import { Checkbox, Delete, Edit } from "../assets/svgs/svg-components/_index.svg";
+import { CheckboxIcon, DeleteIcon, EditIcon } from "../components/_index";
 import { StyledMain } from "../styles/styles";
 /**Temporära imports */
 import { useState } from "react";
@@ -22,9 +22,9 @@ export const Main = () => {
   return (
     <StyledMain>
       <div>Main</div>
-      <Checkbox isChecked={isChecked} onToggle={handleOnChecked} />
-      <Edit onEdit={handleOnEdit} />
-      <Delete onDelete={handleOnDelete} />
+      <CheckboxIcon isChecked={isChecked} onToggle={handleOnChecked} />
+      <EditIcon onEdit={handleOnEdit} />
+      <DeleteIcon onDelete={handleOnDelete} />
     </StyledMain>
   );
 };

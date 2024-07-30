@@ -1,8 +1,8 @@
 import styled, { css } from "styled-components";
-import { ping, pulse } from "../../../styles/styles";
-import { theme } from "../../../styles/theme";
+import { ping, pulse } from "../styles/styles";
+import { theme } from "../styles/theme";
 
-export interface CheckboxSvgProps {
+export interface CheckboxIconProps {
   isChecked?: boolean;
   onToggle: () => void;
 }
@@ -15,7 +15,7 @@ const SVG = styled.svg<{ $isChecked?: boolean }>`
     `}
 `;
 
-export const Checkbox = ({ isChecked, onToggle }: CheckboxSvgProps) => {
+export const CheckboxIcon = ({ isChecked, onToggle }: CheckboxIconProps) => {
   return (
     <SVG
       $isChecked={isChecked}

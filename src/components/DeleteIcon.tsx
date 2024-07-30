@@ -1,10 +1,10 @@
-import { theme } from "../../../styles/theme";
+import { theme } from "../styles/theme";
 
-export interface IconSvgProps {
+export interface DeleteIconProps {
   onDelete: () => void;
 }
 
-export const Delete = ({ onDelete }: IconSvgProps) => {
+export const DeleteIcon = ({ onDelete }: DeleteIconProps) => {
   return (
     <svg
       onClick={onDelete}

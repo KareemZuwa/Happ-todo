@@ -1,10 +1,10 @@
-import { theme } from "../../../styles/theme";
+import { theme } from "../styles/theme";
 
-export interface IconSvgProps {
+export interface EditIconProps {
   onEdit: () => void;
 }
 
-export const Edit = ({ onEdit }: IconSvgProps) => {
+export const EditIcon = ({ onEdit }: EditIconProps) => {
   return (
     <svg
       onClick={onEdit}
