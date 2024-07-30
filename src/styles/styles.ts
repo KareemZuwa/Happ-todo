@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import { theme } from "../styles/theme";
 
 /** WRAPPER CONTAINER STYLE COMPONENTS */
@@ -75,4 +75,30 @@ export const CloseIcon = styled.svg.attrs({
   g path:last-child {
     fill: ${theme.colors.darkGrey};
   }
+`;
+
+/** KEYFRAMES */
+export const ping = keyframes`
+0%
+  {
+    box-shadow: 0 0 0 0 rgba(255,255,255,.7), 0 0 0 0 rgba(255,255,255,.7);
+  }
+  40%
+  {
+    box-shadow: 0 0 0 8px rgba(255,255,255,0), 0 0 0 0 rgba(2255,255,255,.7);
+  }
+  80%
+  {
+    box-shadow: 0 0 0 8px rgba(255,255,255,0), 0 0 0 0 rgba(255,255,255,0);
+  }
+  100%
+  {
+    box-shadow: 0 0 0 0 rgba(255,255,255,0), 0 0 0 0 rgba(255,255,255,0);
+  }
+`;
+
+export const pulse = keyframes`
+  0% { transform: scale(1); }
+  50% { transform: scale(1.3); }
+  100% { transform: scale(1); }
 `;
