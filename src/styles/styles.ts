@@ -65,18 +65,6 @@ export const Paragraph = styled.p<{ fontWeight?: number }>`
   font-weight: ${({ fontWeight }) => fontWeight ?? theme.fontWeights.regular};
 `;
 
-/** ICONS STYLED COMPONENTS */
-export const CloseIcon = styled.svg.attrs({
-  xmlns: "http://www.w3.org/2000/svg",
-  viewBox: "0 0 24 24",
-})`
-  width: ${theme.fontSizes.large};
-  height: ${theme.fontSizes.large};
-  g path:last-child {
-    fill: ${theme.colors.darkGrey};
-  }
-`;
-
 /** KEYFRAMES */
 export const ping = keyframes`
 0%
