@@ -1,3 +1,9 @@
+export interface Todo {
+  id: string;
+  title: string;
+  completed: boolean;
+}
+
 /**
  * Extends Styled Component interface
  * to include custom style definitions for the Theme.
@@ -96,13 +102,6 @@ export interface InputFieldProps {
   onInputChange: (value: string) => void;
   placeholder?: string;
   mode: "dark" | "light";
-}
-
-export interface IconButtonProps {
-  onClick: () => void;
-  children: React.ReactNode;
-  hoverStyle?: string;
-  focusStyle?: string;
 }
 
 export interface DialogProps {
