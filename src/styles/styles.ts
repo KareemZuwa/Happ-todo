@@ -27,6 +27,7 @@ export const StyledHeader = styled.header`
 
 export const StyledMain = styled.main`
   margin: 0 auto;
+  width: 100%;
   max-width: ${theme.breakpoints.md};
   flex-grow: 1;
   padding-top: 6rem;
@@ -48,18 +49,33 @@ export const DialogBox = styled.div`
   width: ${theme.breakpoints.xs};
 `;
 
+export const ItemBox = styled.article`
+  background-color: rgba(234, 232, 238, 0.1);
+  backdrop-filter: blur(1rem);
+  border: 0.0625rem solid rgba(255, 255, 255, 0.15);
+  border-radius: ${theme.borders.md};
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.625rem 1.5rem;
+  gap: 1.5rem;
+`;
+
 /*** TYPOGRAPHY STYLED COMPONENTS */
 export const Title = styled.h1<{ fontWeight?: number }>`
+  margin-block: 0;
   font-size: ${theme.fontSizes.large};
   color: ${({ color }) => color ?? theme.colors.offWhite};
   font-weight: ${({ fontWeight }) => fontWeight ?? theme.fontWeights.semibold};
 `;
 export const Subtitle = styled.h2<{ fontWeight?: number }>`
+  margin-block: 0;
   font-size: ${theme.fontSizes.medium};
   color: ${({ color }) => color ?? theme.colors.offWhite};
   font-weight: ${({ fontWeight }) => fontWeight ?? theme.fontWeights.medium};
 `;
 export const Paragraph = styled.p<{ fontWeight?: number }>`
+  margin-block: 0;
   font-size: ${theme.fontSizes.small};
   color: ${({ color }) => color ?? theme.colors.offWhite};
   font-weight: ${({ fontWeight }) => fontWeight ?? theme.fontWeights.regular};
