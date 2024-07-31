@@ -8,6 +8,7 @@ export interface CheckboxIconProps {
 }
 
 const SVG = styled.svg<{ $isChecked?: boolean }>`
+  cursor: pointer;
   ${(props) =>
     props.$isChecked &&
     css`
