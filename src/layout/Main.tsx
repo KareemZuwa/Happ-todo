@@ -28,7 +28,7 @@ export const Main = () => {
   };
 
   //MARK AS DONE
-  const markTodoAsDone = (id: string) => {
+  const markTodoAsCompleted = (id: string) => {
     setTodos(
       todos.map((todo) =>
         todo.id === id ? { ...todo, completed: !todo.completed } : todo
@@ -80,7 +80,7 @@ export const Main = () => {
               todo={todo}
               index={index}
               deleteTodo={deleteTodo}
-              markTodoAsDone={markTodoAsDone}
+              markTodoAsCompleted={markTodoAsCompleted}
             />
           </ItemBox>
         ))}

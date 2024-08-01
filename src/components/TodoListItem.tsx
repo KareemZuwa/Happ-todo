@@ -7,7 +7,7 @@ export interface TodoListItemProps {
   todo: Todo;
   index: number;
   deleteTodo: (id: string) => void;
-  markTodoAsDone: (id: string) => void;
+  markTodoAsCompleted: (id: string) => void;
 }
 
 const Box = styled.div`
@@ -26,12 +26,12 @@ export const TodoListItem = ({
   todo,
   index,
   deleteTodo,
-  markTodoAsDone,
+  markTodoAsCompleted,
 }: TodoListItemProps) => {
   const [openDialog, setOpenDialog] = useState<boolean>(false);
 
-  const handleChecked = () => {
-    markTodoAsDone(todo.id);
+  const toggleTodoCompletion = () => {
+    markTodoAsCompleted(todo.id);
   };
 
   const handleDelete = () => {
@@ -48,7 +48,10 @@ export const TodoListItem = ({
       </Box>
 
       <Box>
-        <CheckboxIcon isChecked={todo.completed} onToggle={handleChecked} />
+        <CheckboxIcon
+          isChecked={todo.completed}
+          onToggle={toggleTodoCompletion}
+        />
         {!todo.completed && (
           <EditIcon onEdit={() => setOpenDialog(!openDialog)} />
         )}
