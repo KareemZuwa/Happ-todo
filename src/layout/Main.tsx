@@ -10,8 +10,14 @@ import {
 import { ItemBox, StyledMain } from "../styles/styles";
 import { Todo } from "../types/interfaces";
 
+const mockTodos: Todo[] = [
+  { id: "1", title: "Tvätta lakan", completed: false },
+  { id: "2", title: "Hämta cykeln", completed: false },
+  { id: "3", title: "Ring facket", completed: false },
+];
+
 export const Main = () => {
-  const [todos, setTodos] = useState<Todo[]>([]);
+  const [todos, setTodos] = useState<Todo[]>(mockTodos);
   const [newTodo, setNewTodo] = useState<string>("");
   console.log(todos);
 

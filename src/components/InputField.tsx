@@ -3,7 +3,7 @@ import { InputFieldProps } from "../types/interfaces";
 import { theme } from "../styles/theme";
 
 const StyledInputField = styled.input<{ mode: string }>`
-width: 100%;
+  width: ${({ mode }) => mode === "dark" && "100%"};
   color: ${({ mode }) =>
     mode === "dark" ? theme.colors.offWhite : theme.colors.darkGrey};
   margin: ${({ mode }) => mode === "light" && "0rem .3rem"};
