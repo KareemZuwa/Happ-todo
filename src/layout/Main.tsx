@@ -1,5 +1,4 @@
-import { FormEvent, useState } from "react";
-import { mockTodos } from "../assets/mock";
+import { FormEvent, useEffect, useState } from "react";
 import {
   AddFormView,
   Button,
@@ -12,13 +11,38 @@ import { ItemBox, StyledMain } from "../styles/styles";
 import { Todo } from "../types/interfaces";
 
 export const Main = () => {
-  const [todos] = useState<Todo[]>(mockTodos);
+  const [todos, setTodos] = useState<Todo[]>([]);
   const [newTodo, setNewTodo] = useState<string>("");
-  console.log(newTodo);
+  console.log(todos);
+
+  // Load todos from localStorage when the component mounts
+  useEffect(() => {
+    const storedTodos = localStorage.getItem("todos");
+    if (storedTodos) {
+      setTodos(JSON.parse(storedTodos) as Todo[]);
+    }
+  }, []);
+
+  // Save todos to localStorage whenever the todos state changes
+  useEffect(() => {
+    localStorage.setItem("todos", JSON.stringify(todos));
+  }, [todos]);
+
+  const addTodo = (title: string) => {
+    if (title.trim() === "") return;
+    const newTodo: Todo = {
+      id: Date.now().toString(),
+      title: title,
+      completed: false,
+    };
+    setTodos([...todos, newTodo]);
+  };
 
   //Submit
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    addTodo(newTodo);
+    setNewTodo("");
     // Process form data and store it in localStorage or context
     // setFormData(event.target);
   };
