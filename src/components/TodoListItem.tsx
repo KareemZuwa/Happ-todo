@@ -6,6 +6,8 @@ import styled from "styled-components";
 export interface TodoListItemProps {
   todo: Todo;
   index: number;
+  deleteTodo: (id: string) => void;
+  markTodoAsDone: (id: string) => void;
 }
 
 const Box = styled.div`
@@ -20,26 +22,36 @@ const TodoItemSubtitle = styled(Subtitle)<{ $isChecked: boolean }>`
   color: #ffffff53; `}
 `;
 
-export const TodoListItem = ({ todo, index }: TodoListItemProps) => {
-  const [isChecked, setIsChecked] = useState<boolean>(false);
+export const TodoListItem = ({
+  todo,
+  index,
+  deleteTodo,
+  markTodoAsDone,
+}: TodoListItemProps) => {
+  const [openDialog, setOpenDialog] = useState<boolean>(false);
 
   const handleChecked = () => {
-    setIsChecked(!isChecked);
+    markTodoAsDone(todo.id);
   };
 
-  const handleEdit = () => console.log("editing");
-
-  const handleDelete = () => console.log("deleting");
+  const handleDelete = () => {
+    deleteTodo(todo.id);
+  };
   return (
     <>
       <Box>
         <Subtitle>{index + 1}.</Subtitle>
-        <TodoItemSubtitle $isChecked={isChecked}>{todo.title}</TodoItemSubtitle>
+        <TodoItemSubtitle $isChecked={todo.completed}>
+          {todo.title}
+        </TodoItemSubtitle>
+        {openDialog && <div>{todo.id && todo.title}</div>}
       </Box>
 
       <Box>
-        <CheckboxIcon isChecked={isChecked} onToggle={handleChecked} />
-        {!isChecked && <EditIcon onEdit={handleEdit} />}
+        <CheckboxIcon isChecked={todo.completed} onToggle={handleChecked} />
+        {!todo.completed && (
+          <EditIcon onEdit={() => setOpenDialog(!openDialog)} />
+        )}
         <DeleteIcon onDelete={handleDelete} />
       </Box>
     </>

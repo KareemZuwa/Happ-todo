@@ -1,4 +1,4 @@
-import { FormEvent, useEffect, useState } from "react";
+import { FormEvent, useState } from "react";
 import {
   AddFormView,
   Button,
@@ -15,19 +15,8 @@ export const Main = () => {
   const [newTodo, setNewTodo] = useState<string>("");
   console.log(todos);
 
-  // Load todos from localStorage when the component mounts
-  useEffect(() => {
-    const storedTodos = localStorage.getItem("todos");
-    if (storedTodos) {
-      setTodos(JSON.parse(storedTodos) as Todo[]);
-    }
-  }, []);
-
-  // Save todos to localStorage whenever the todos state changes
-  useEffect(() => {
-    localStorage.setItem("todos", JSON.stringify(todos));
-  }, [todos]);
-
+  /*******************************FUNCTIONALITY */
+  //ADD TODO
   const addTodo = (title: string) => {
     if (title.trim() === "") return;
     const newTodo: Todo = {
@@ -37,6 +26,31 @@ export const Main = () => {
     };
     setTodos([...todos, newTodo]);
   };
+
+  //MARK AS DONE
+  const markTodoAsDone = (id: string) => {
+    setTodos(
+      todos.map((todo) =>
+        todo.id === id ? { ...todo, completed: !todo.completed } : todo
+      )
+    );
+  };
+
+  //EDIT TODO---- fix edit diaalog later
+  // const editTodo = (id: string, newTitle: string) => {
+  //   setTodos(
+  //     todos.map((todo) =>
+  //       todo.id === id ? { ...todo, title: newTitle } : todo
+  //     )
+  //   );
+  // };
+
+  //DELETE TODO
+  const deleteTodo = (id: string) => {
+    setTodos(todos.filter((todo) => todo.id !== id));
+  };
+
+  /*******************************FUNCTIONALITY */
 
   //Submit
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
@@ -62,7 +76,12 @@ export const Main = () => {
       <TodoListView>
         {todos.map((todo, index: number) => (
           <ItemBox key={todo.id}>
-            <TodoListItem todo={todo} index={index} />
+            <TodoListItem
+              todo={todo}
+              index={index}
+              deleteTodo={deleteTodo}
+              markTodoAsDone={markTodoAsDone}
+            />
           </ItemBox>
         ))}
       </TodoListView>
