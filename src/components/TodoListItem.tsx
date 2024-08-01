@@ -13,6 +13,13 @@ const Box = styled.div`
   gap: 1.5rem;
 `;
 
+const TodoItemSubtitle = styled(Subtitle)<{ $isChecked: boolean }>`
+  ${(props) =>
+    props.$isChecked &&
+    `text-decoration: line-through;
+  color: #ffffff53; `}
+`;
+
 export const TodoListItem = ({ todo, index }: TodoListItemProps) => {
   const [isChecked, setIsChecked] = useState<boolean>(false);
 
@@ -27,12 +34,12 @@ export const TodoListItem = ({ todo, index }: TodoListItemProps) => {
     <>
       <Box>
         <Subtitle>{index + 1}.</Subtitle>
-        <Subtitle>{todo.title}</Subtitle>
+        <TodoItemSubtitle $isChecked={isChecked}>{todo.title}</TodoItemSubtitle>
       </Box>
 
       <Box>
         <CheckboxIcon isChecked={isChecked} onToggle={handleChecked} />
-        <EditIcon onEdit={handleEdit} />
+        {!isChecked && <EditIcon onEdit={handleEdit} />}
         <DeleteIcon onDelete={handleDelete} />
       </Box>
     </>
