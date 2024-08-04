@@ -25,7 +25,7 @@ const StyledButton = styled.button<{
   }
 `;
 
-export const Button = ({ title, onClick, type, mode }: ButtonProps) => (
+export const Button = ({ title, onClick, type, mode}: ButtonProps) => (
   <StyledButton type={type} onClick={onClick} mode={mode}>
     {title}
   </StyledButton>

@@ -4,6 +4,7 @@ import {
   Button,
   Form,
   InputField,
+  Modal,
   TodoListItem,
   TodoListView,
 } from "../components/_index";
@@ -19,6 +20,9 @@ const mockTodos: Todo[] = [
 export const Main = () => {
   const [todos, setTodos] = useState<Todo[]>(mockTodos);
   const [newTodo, setNewTodo] = useState<string>("");
+  const [editingTodoId, setEditingTodoId] = useState<string | null>(null);
+  const [modalOpen, setModalOpen] = useState<boolean>(false);
+  const [modalValue, setModalValue] = useState<string>("");
   console.log(todos);
 
   /*******************************FUNCTIONALITY */
@@ -43,13 +47,25 @@ export const Main = () => {
   };
 
   //EDIT TODO---- fix edit diaalog later
-  // const editTodo = (id: string, newTitle: string) => {
-  //   setTodos(
-  //     todos.map((todo) =>
-  //       todo.id === id ? { ...todo, title: newTitle } : todo
-  //     )
-  //   );
-  // };
+  const editTodo = (id: string, newTitle: string) => {
+    setTodos(
+      todos.map((todo) =>
+        todo.id === id ? { ...todo, title: newTitle } : todo
+      )
+    );
+  };
+
+  const handleEditClick = (id: string, title: string) => {
+    setEditingTodoId(id);
+    setModalValue(title);
+    setModalOpen(true);
+  };
+
+  const handleModalSave = (value: string) => {
+    if (editingTodoId) {
+      editTodo(editingTodoId, value);
+    }
+  };
 
   //DELETE TODO
   const deleteTodo = (id: string) => {
@@ -87,10 +103,18 @@ export const Main = () => {
               index={index}
               deleteTodo={deleteTodo}
               markTodoAsCompleted={markTodoAsCompleted}
+              handleEditClick={handleEditClick}
             />
           </ItemBox>
         ))}
       </TodoListView>
+      <Modal
+        isOpen={modalOpen}
+        onClose={() => setModalOpen(false)}
+        onSave={handleModalSave}
+        initialValue={modalValue}
+        onChangeModalValue={setModalValue}
+      />
     </StyledMain>
   );
 };

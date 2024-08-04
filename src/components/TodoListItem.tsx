@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { Subtitle } from "../styles/styles";
 import { Todo } from "../types/interfaces";
 import { CheckboxIcon, DeleteIcon, EditIcon } from "./_index";
@@ -8,6 +7,7 @@ export interface TodoListItemProps {
   index: number;
   deleteTodo: (id: string) => void;
   markTodoAsCompleted: (id: string) => void;
+  handleEditClick: (id: string, title: string) => void;
 }
 
 const Box = styled.div`
@@ -27,9 +27,8 @@ export const TodoListItem = ({
   index,
   deleteTodo,
   markTodoAsCompleted,
+  handleEditClick,
 }: TodoListItemProps) => {
-  const [openDialog, setOpenDialog] = useState<boolean>(false);
-
   const toggleTodoCompletion = () => {
     markTodoAsCompleted(todo.id);
   };
@@ -44,7 +43,6 @@ export const TodoListItem = ({
         <TodoItemSubtitle $isChecked={todo.completed}>
           {todo.title}
         </TodoItemSubtitle>
-        {openDialog && <div>{todo.id && todo.title}</div>}
       </Box>
 
       <Box>
@@ -53,7 +51,7 @@ export const TodoListItem = ({
           onToggle={toggleTodoCompletion}
         />
         {!todo.completed && (
-          <EditIcon onEdit={() => setOpenDialog(!openDialog)} />
+          <EditIcon onEdit={() => handleEditClick(todo.id, todo.title)} />
         )}
         <DeleteIcon onDelete={handleDelete} />
       </Box>

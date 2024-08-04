@@ -107,5 +107,7 @@ export interface InputFieldProps {
 export interface DialogProps {
   onClose: () => void;
   value: string;
-  onChange: (newValue: string) => void;
+  setValue: (newValue: string) => void;
+  onClick?: (e: React.MouseEvent<HTMLDivElement>) => void;
+  handleSave: () => void;
 }

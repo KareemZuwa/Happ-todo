@@ -12,3 +12,4 @@ export { Logo } from "./Logo";
 export { TodoListItem } from "./TodoListItem";
 export { TodoListView } from "./TodoListView";
 export { UpdateDialogView } from "./UpdateDialogView";
+export { Modal } from "./Modal";
