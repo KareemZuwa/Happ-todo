@@ -8,18 +8,15 @@ export const Dialog = ({
   setValue,
   onClick,
   handleSave,
-}: DialogProps) => {
-
-  return (
-    <DialogBox onClick={onClick}>
-      <CloseButton onClick={onClose} />
-      <InputField mode={"light"} value={value} onInputChange={setValue} />
-      <Button
-        type="button"
-        mode="update"
-        title="Update Task"
-        onClick={handleSave}
-      />
-    </DialogBox>
-  );
-};
+}: DialogProps) => (
+  <DialogBox onClick={onClick}>
+    <CloseButton onClick={onClose} />
+    <InputField mode={"light"} value={value} onInputChange={setValue} />
+    <Button
+      type="button"
+      mode="update"
+      title="Update Task"
+      onClick={handleSave}
+    />
+  </DialogBox>
+);

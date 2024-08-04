@@ -1,14 +1,7 @@
 import { Subtitle } from "../styles/styles";
-import { Todo } from "../types/interfaces";
+import { TodoListItemProps } from "../types/interfaces";
 import { CheckboxIcon, DeleteIcon, EditIcon } from "./_index";
 import styled from "styled-components";
-export interface TodoListItemProps {
-  todo: Todo;
-  index: number;
-  deleteTodo: (id: string) => void;
-  markTodoAsCompleted: (id: string) => void;
-  handleEditClick: (id: string, title: string) => void;
-}
 
 const Box = styled.div`
   display: flex;
@@ -36,6 +29,7 @@ export const TodoListItem = ({
   const handleDelete = () => {
     deleteTodo(todo.id);
   };
+
   return (
     <>
       <Box>

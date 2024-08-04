@@ -1,15 +1,15 @@
 import { ReactNode } from "react";
 import styled from "styled-components";
 
-export interface AddFormViewProps {
+interface AddFormViewProps {
   children: ReactNode;
 }
 
 const AddFormViewBox = styled.section`
-width: 100%;
-margin-bottom: 4rem;
+  width: 100%;
+  margin-bottom: 4rem;
 `;
 
-export const AddFormView = ({ children }: AddFormViewProps) => {
-  return <AddFormViewBox>{children}</AddFormViewBox>;
-};
+export const AddFormView = ({ children }: AddFormViewProps) => (
+  <AddFormViewBox>{children}</AddFormViewBox>
+);

@@ -19,8 +19,6 @@ const UpdateDialogViewBox = styled.dialog`
   align-items: center;
 `;
 
-export const UpdateDialogView = ({
-  children,
-}: UpdateDialogViewProps) => {
-  return <UpdateDialogViewBox open>{children}</UpdateDialogViewBox>;
-};
+export const UpdateDialogView = ({ children }: UpdateDialogViewProps) => (
+  <UpdateDialogViewBox open>{children}</UpdateDialogViewBox>
+);

@@ -1,11 +1,5 @@
-import { FormEventHandler, ReactNode } from "react";
 import styled from "styled-components";
-
-export interface FormProps {
-  children: ReactNode;
-  onSubmit: FormEventHandler<HTMLFormElement>;
-  row?: boolean;
-}
+import { FormProps } from "../types/interfaces";
 
 const StyledForm = styled.form<{ $row?: boolean }>`
   width: 100%;

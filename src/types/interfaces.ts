@@ -1,3 +1,5 @@
+import { FormEventHandler, ReactNode } from "react";
+
 export interface Todo {
   id: string;
   title: string;
@@ -97,6 +99,20 @@ export interface ButtonProps {
   mode: "add" | "update";
 }
 
+export interface DialogProps {
+  onClose: () => void;
+  value: string;
+  setValue: (newValue: string) => void;
+  onClick?: (e: React.MouseEvent<HTMLDivElement>) => void;
+  handleSave: () => void;
+}
+
+export interface FormProps {
+  children: ReactNode;
+  onSubmit: FormEventHandler<HTMLFormElement>;
+  row?: boolean;
+}
+
 export interface InputFieldProps {
   value: string;
   onInputChange: (value: string) => void;
@@ -104,10 +120,18 @@ export interface InputFieldProps {
   mode: "dark" | "light";
 }
 
-export interface DialogProps {
+export interface ModalProps {
+  isOpen: boolean;
   onClose: () => void;
-  value: string;
-  setValue: (newValue: string) => void;
-  onClick?: (e: React.MouseEvent<HTMLDivElement>) => void;
-  handleSave: () => void;
+  onSave: (value: string) => void;
+  initialValue: string;
+  onChangeModalValue: (newValue: string) => void;
+}
+
+export interface TodoListItemProps {
+  todo: Todo;
+  index: number;
+  deleteTodo: (id: string) => void;
+  markTodoAsCompleted: (id: string) => void;
+  handleEditClick: (id: string, title: string) => void;
 }
