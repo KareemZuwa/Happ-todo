@@ -97,7 +97,10 @@ export const Main = () => {
       </AddFormView>
       <TodoListView>
         {todos.map((todo, index: number) => (
-          <ItemBox key={todo.id}>
+          <ItemBox
+            key={todo.id}
+            $backgroundColor={todo.completed ? "#491c4c40" : "#eae8ee1a"}
+          >
             <TodoListItem
               todo={todo}
               index={index}

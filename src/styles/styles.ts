@@ -49,8 +49,9 @@ export const DialogBox = styled.div`
   width: ${theme.breakpoints.xs};
 `;
 
-export const ItemBox = styled.article`
-  background-color: rgba(234, 232, 238, 0.1);
+export const ItemBox = styled.li<{ $backgroundColor?: string }>`
+  background-color: ${({ $backgroundColor }) =>
+    $backgroundColor ?? "rgba(234, 232, 238, 0.1)"};
   backdrop-filter: blur(1rem);
   border: 0.0625rem solid rgba(255, 255, 255, 0.15);
   border-radius: ${theme.borders.md};

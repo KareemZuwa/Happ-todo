@@ -5,7 +5,12 @@ export interface TodoListViewProps {
   children: ReactNode;
 }
 
-const TodoListViewBox = styled.section`
+const TodoListViewBox = styled.section``;
+
+const TodoListUL = styled.ul`
+  padding-inline-start: 0;
+  margin: 0;
+  list-style: none;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -13,5 +18,7 @@ const TodoListViewBox = styled.section`
 `;
 
 export const TodoListView = ({ children }: TodoListViewProps) => (
-  <TodoListViewBox>{children}</TodoListViewBox>
+  <TodoListViewBox>
+    <TodoListUL>{children}</TodoListUL>
+  </TodoListViewBox>
 );
