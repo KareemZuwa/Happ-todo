@@ -99,9 +99,7 @@ export const Main = () => {
         {todos.map((todo, index: number) => (
           <ItemBox
             key={todo.id}
-            $backgroundColor={
-              todo.completed ? "#491c4c40" : "rgba(234, 232, 238, 0.1)"
-            }
+            $backgroundColor={todo.completed ? "#491c4c40" : "#eae8ee1a"}
           >
             <TodoListItem
               todo={todo}
