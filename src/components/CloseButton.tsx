@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { theme } from "../styles/theme";
 
-export interface CloseButtonProps {
+interface CloseButtonProps {
   onClick: () => void;
 }
 
@@ -16,7 +16,7 @@ const StyledIconButton = styled.button`
   place-self: end;
 `;
 
-export const CloseIcon = styled.svg.attrs({
+const CloseIcon = styled.svg.attrs({
   xmlns: "http://www.w3.org/2000/svg",
   viewBox: "0 0 24 24",
 })`

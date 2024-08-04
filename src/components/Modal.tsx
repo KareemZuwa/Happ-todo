@@ -1,13 +1,6 @@
 import styled from "styled-components";
 import { Dialog } from "./_index";
-
-interface ModalProps {
-  isOpen: boolean;
-  onClose: () => void;
-  onSave: (value: string) => void;
-  initialValue: string;
-  onChangeModalValue: (newValue: string) => void;
-}
+import { ModalProps } from "../types/interfaces";
 
 const Overlay = styled.div<{ $isOpen: boolean }>`
   display: ${(props) => (props.$isOpen ? "flex" : "none")};
@@ -33,6 +26,7 @@ export const Modal = ({
     onSave(initialValue);
     onClose();
   };
+
   return (
     <Overlay $isOpen={isOpen} onClick={onClose}>
       <Dialog
