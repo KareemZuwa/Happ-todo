@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { theme } from "../styles/theme";
 import { ButtonProps } from "../types/interfaces";
+import { device } from "../styles/styles";
 
 const StyledButton = styled.button<{
   mode: string;
@@ -22,6 +23,15 @@ const StyledButton = styled.button<{
     color: ${({ mode }) => mode === "add" && theme.colors.offWhite};
     background-color: ${({ mode }) =>
       mode === "add" ? theme.colors.purpleLight : theme.colors.darkGreen};
+  }
+
+  @media ${device.mobileL} {
+    &:hover {
+      color: ${({ mode }) =>
+        mode === "add" ? theme.colors.purpleLight : theme.colors.offWhite};
+      background-color: ${({ mode }) =>
+        mode === "add" ? theme.colors.offWhite : theme.colors.mainGreen};
+    }
   }
 `;
 

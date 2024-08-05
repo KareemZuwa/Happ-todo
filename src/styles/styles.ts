@@ -1,6 +1,12 @@
 import styled, { keyframes } from "styled-components";
 import { theme } from "../styles/theme";
 
+export const device = {
+  mobileL: "(max-width: 580px)",
+  tablet: "(min-width: 840px)",
+  laptop: `(min-width: ${theme.breakpoints.lg})`,
+};
+
 /** WRAPPER CONTAINER STYLE COMPONENTS */
 export const Container = styled.div`
   color: ${theme.colors.offWhite};
@@ -30,8 +36,16 @@ export const StyledMain = styled.main`
   width: 100%;
   max-width: ${theme.breakpoints.md};
   flex-grow: 1;
+  box-sizing: border-box;
   padding-top: 6rem;
   padding-bottom: 3rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+
+  @media ${device.tablet} {
+    padding-left: 0rem;
+    padding-right: 0rem;
+  }
 `;
 
 export const StyledFooter = styled.footer`
