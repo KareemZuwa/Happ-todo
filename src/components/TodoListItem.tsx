@@ -1,4 +1,4 @@
-import { Subtitle } from "../styles/styles";
+import { Subtitle, device } from "../styles/styles";
 import { TodoListItemProps } from "../types/interfaces";
 import { CheckboxIcon, DeleteIcon, EditIcon } from "./_index";
 import styled from "styled-components";
@@ -6,6 +6,12 @@ import styled from "styled-components";
 const Box = styled.div`
   display: flex;
   gap: 1.5rem;
+  place-self: flex-start;
+  text-align: start;
+
+  @media ${device.mobileL} {
+    gap: 1rem;
+  }
 `;
 
 const TodoItemSubtitle = styled(Subtitle)<{ $isChecked: boolean }>`

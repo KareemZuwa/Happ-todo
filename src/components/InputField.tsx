@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { InputFieldProps } from "../types/interfaces";
 import { theme } from "../styles/theme";
+import { device } from "../styles/styles";
 
 const StyledInputField = styled.input<{ mode: string }>`
   width: ${({ mode }) => mode === "dark" && "100%"};
@@ -24,6 +25,11 @@ const StyledInputField = styled.input<{ mode: string }>`
     border-bottom: 2px solid
       ${({ mode }) =>
         mode === "dark" ? theme.colors.offWhite : theme.colors.darkGrey};
+  }
+
+  @media ${device.mobileL} {
+    width: auto;
+    margin: 0rem .3rem;
   }
 `;
 
