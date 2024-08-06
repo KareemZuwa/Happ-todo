@@ -61,6 +61,10 @@ export const DialogBox = styled.div`
   padding: 1rem 1.25rem 3rem;
   border-radius: ${theme.borders.md};
   width: ${theme.breakpoints.xs};
+
+  @media ${device.mobileL} {
+    margin: 0rem 2rem;
+  }
 `;
 
 export const ItemBox = styled.li<{ $backgroundColor?: string }>`
@@ -74,6 +78,10 @@ export const ItemBox = styled.li<{ $backgroundColor?: string }>`
   justify-content: space-between;
   padding: 0.625rem 1.5rem;
   gap: 1.5rem;
+
+  @media ${device.mobileL} {
+    padding: 0.625rem 1rem;
+  }
 `;
 
 /*** TYPOGRAPHY STYLED COMPONENTS */
