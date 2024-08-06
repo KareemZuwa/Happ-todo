@@ -10,7 +10,7 @@ const Box = styled.div`
   text-align: start;
 
   @media ${device.mobileL} {
-    gap: 1rem;
+    gap: 0.5rem;
   }
 `;
 
