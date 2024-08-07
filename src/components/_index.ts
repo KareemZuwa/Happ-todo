@@ -9,7 +9,7 @@ export { Form } from "./Form";
 export { InputField } from "./InputField";
 export { LineSvg } from "./LineSvg";
 export { Logo } from "./Logo";
+export { Modal } from "./Modal";
 export { TodoListItem } from "./TodoListItem";
 export { TodoListView } from "./TodoListView";
 export { UpdateDialogView } from "./UpdateDialogView";
-export { Modal } from "./Modal";
