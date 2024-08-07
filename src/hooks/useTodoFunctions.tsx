@@ -3,11 +3,8 @@ import { Todo } from "../types/interfaces";
 
 // Define the hook
 export const useTodoFunctions = () => {
-  const [todos, setTodos] = useState<Todo[]>([
-    { id: "1", title: "Tvätta lakan", completed: false },
-    { id: "2", title: "Hämta cykeln", completed: false },
-    { id: "3", title: "Ring facket", completed: false },
-  ]);
+  const [todos, setTodos] = useState<Todo[]>([]);
+  const [newTodo, setNewTodo] = useState<string>("");
 
   // Add a new todo
   const addTodo = (title: string) => {
@@ -45,6 +42,8 @@ export const useTodoFunctions = () => {
 
   return {
     todos,
+    newTodo,
+    setNewTodo,
     addTodo,
     markTodoAsCompleted,
     editTodo,

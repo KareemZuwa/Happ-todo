@@ -9,47 +9,23 @@ import {
   TodoListView,
 } from "../components/_index";
 import { ItemBox, StyledMain } from "../styles/styles";
-import { Todo } from "../types/interfaces";
+import { useTodoFunctions } from "../hooks/useTodoFunctions";
 
 export const Main = () => {
-  const [todos, setTodos] = useState<Todo[]>([]);
-  const [newTodo, setNewTodo] = useState<string>("");
+  const {
+    todos,
+    newTodo,
+    setNewTodo,
+    addTodo,
+    markTodoAsCompleted,
+    editTodo,
+    deleteTodo,
+  } = useTodoFunctions();
+  console.log(todos);
   const [editingTodoId, setEditingTodoId] = useState<string | null>(null);
   const [modalOpen, setModalOpen] = useState<boolean>(false);
   const [modalValue, setModalValue] = useState<string>("");
-  console.log(todos);
 
-  /*******************************FUNCTIONALITY */
-  //ADD TODO
-  const addTodo = (title: string) => {
-    if (title.trim() === "") return;
-    const newTodo: Todo = {
-      id: Date.now().toString(),
-      title: title,
-      completed: false,
-    };
-    setTodos([...todos, newTodo]);
-  };
-
-  //MARK TODO AS DONE
-  const markTodoAsCompleted = (id: string) => {
-    setTodos(
-      todos.map((todo) =>
-        todo.id === id ? { ...todo, completed: !todo.completed } : todo
-      )
-    );
-  };
-
-  //EDIT TODO
-  const editTodo = (id: string, newTitle: string) => {
-    setTodos(
-      todos.map((todo) =>
-        todo.id === id ? { ...todo, title: newTitle } : todo
-      )
-    );
-  };
-
-  //TODO LIST ITEM EDIT BUTTON
   const handleEditClick = (id: string, title: string) => {
     setEditingTodoId(id);
     setModalValue(title);
@@ -68,16 +44,6 @@ export const Main = () => {
     setModalValue("");
   };
 
-  console.log(modalValue);
-
-  //DELETE TODO
-  const deleteTodo = (id: string) => {
-    setTodos(todos.filter((todo) => todo.id !== id));
-  };
-
-  /*******************************FUNCTIONALITY */
-
-  //Submit
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     addTodo(newTodo);
