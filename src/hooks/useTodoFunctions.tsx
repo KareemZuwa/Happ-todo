@@ -1,12 +1,10 @@
 import { useState } from "react";
 import { Todo } from "../types/interfaces";
 
-// Define the hook
 export const useTodoFunctions = () => {
   const [todos, setTodos] = useState<Todo[]>([]);
   const [newTodo, setNewTodo] = useState<string>("");
 
-  // Add a new todo
   const addTodo = (title: string) => {
     if (title.trim() === "") return;
     const newTodo: Todo = {
@@ -17,7 +15,6 @@ export const useTodoFunctions = () => {
     setTodos([...todos, newTodo]);
   };
 
-  // Mark a todo as completed
   const markTodoAsCompleted = (id: string) => {
     setTodos(
       todos.map((todo) =>
@@ -26,7 +23,6 @@ export const useTodoFunctions = () => {
     );
   };
 
-  // Edit a todo
   const editTodo = (id: string, newTitle: string) => {
     setTodos(
       todos.map((todo) =>
@@ -35,7 +31,6 @@ export const useTodoFunctions = () => {
     );
   };
 
-  // Delete a todo
   const deleteTodo = (id: string) => {
     setTodos(todos.filter((todo) => todo.id !== id));
   };
