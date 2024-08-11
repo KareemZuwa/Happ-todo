@@ -12,7 +12,6 @@ export const useTodoFunctions = () => {
 
   useEffect(() => {
     localStorage.setItem("todos", JSON.stringify(todos));
-    console.log("Updated localStorage:", localStorage.getItem("todos"));
   }, [todos]);
 
   const addTodo = (title: string) => {
