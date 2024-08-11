@@ -1,9 +1,18 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Todo } from "../types/interfaces";
 
 export const useTodoFunctions = () => {
-  const [todos, setTodos] = useState<Todo[]>([]);
+  const getTodosFromLocalStorage = () => {
+    const storedTodos = localStorage.getItem("todos");
+    return storedTodos ? (JSON.parse(storedTodos) as Todo[]) : [];
+  };
+
+  const [todos, setTodos] = useState<Todo[]>(getTodosFromLocalStorage);
   const [newTodo, setNewTodo] = useState<string>("");
+
+  useEffect(() => {
+    localStorage.setItem("todos", JSON.stringify(todos));
+  }, [todos]);
 
   const addTodo = (title: string) => {
     if (title.trim() === "") return;
