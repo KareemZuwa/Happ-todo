@@ -21,14 +21,13 @@ export const Main = () => {
     editTodo,
     deleteTodo,
   } = useTodoFunctions();
-  console.log(todos);
   const [editingTodoId, setEditingTodoId] = useState<string | null>(null);
+  const [editingValue, setEditingValue] = useState<string>("");
   const [modalOpen, setModalOpen] = useState<boolean>(false);
-  const [modalValue, setModalValue] = useState<string>("");
 
   const handleEditClick = (id: string, title: string) => {
     setEditingTodoId(id);
-    setModalValue(title);
+    setEditingValue(title);
     setModalOpen(true);
   };
 
@@ -36,21 +35,23 @@ export const Main = () => {
     if (editingTodoId) {
       editTodo(editingTodoId, value);
     }
-    setModalValue("");
+    setModalOpen(false);
+    setEditingValue("");
   };
 
   const closeDialogAndCancelEdit = () => {
     setModalOpen(false);
-    setModalValue("");
+    setEditingValue("");
   };
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    addTodo(newTodo);
-    setNewTodo("");
-    // Process form data and store it in localStorage or context
-    // setFormData(event.target);
+    if (newTodo.trim()) {
+      addTodo(newTodo);
+      setNewTodo("");
+    }
   };
+
   return (
     <StyledMain>
       <AddFormView>
@@ -84,8 +85,8 @@ export const Main = () => {
         isOpen={modalOpen}
         onClose={closeDialogAndCancelEdit}
         onSave={handleModalSave}
-        initialValue={modalValue}
-        onChangeModalValue={setModalValue}
+        initialValue={editingValue}
+        onChangeModalValue={setEditingValue}
       />
     </StyledMain>
   );

@@ -9,7 +9,7 @@ interface CheckboxIconProps {
 
 const SVG = styled.svg<{ $isChecked?: boolean }>`
   cursor: pointer;
-  padding-top: 2px;
+  padding-top: 3px;
   ${(props) =>
     props.$isChecked &&
     css`
