@@ -84,6 +84,15 @@ export const ItemBox = styled.li<{ $backgroundColor?: string }>`
   }
 `;
 
+export const NoDataBox = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+ padding-top: 1rem;
+`;
+
 /*** TYPOGRAPHY STYLED COMPONENTS */
 export const Title = styled.h1<{ fontWeight?: number }>`
   margin-block: 0;

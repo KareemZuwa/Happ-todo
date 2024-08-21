@@ -8,7 +8,12 @@ import {
   TodoListItem,
   TodoListView,
 } from "../components/_index";
-import { ItemBox, StyledMain } from "../styles/styles";
+import {
+  ItemBox,
+  NoDataBox,
+  StyledMain,
+  Subtitle,
+} from "../styles/styles";
 import { useTodoFunctions } from "../hooks/useTodoFunctions";
 
 export const Main = () => {
@@ -65,22 +70,30 @@ export const Main = () => {
           <Button type={"submit"} title={"Add Task"} mode={"add"} />
         </Form>
       </AddFormView>
-      <TodoListView>
-        {todos.map((todo, index: number) => (
-          <ItemBox
-            key={todo.id}
-            $backgroundColor={todo.completed ? "#491c4c40" : "#eae8ee1a"}
-          >
-            <TodoListItem
-              todo={todo}
-              index={index}
-              deleteTodo={deleteTodo}
-              markTodoAsCompleted={markTodoAsCompleted}
-              handleEditClick={handleEditClick}
-            />
-          </ItemBox>
-        ))}
-      </TodoListView>
+      {todos.length === 0 ? (
+        <NoDataBox>
+          <Subtitle fontWeight={300} color={"#ffffff63"}>
+            Please add a task
+          </Subtitle>
+        </NoDataBox>
+      ) : (
+        <TodoListView>
+          {todos.map((todo, index: number) => (
+            <ItemBox
+              key={todo.id}
+              $backgroundColor={todo.completed ? "#491c4c40" : "#eae8ee1a"}
+            >
+              <TodoListItem
+                todo={todo}
+                index={index}
+                deleteTodo={deleteTodo}
+                markTodoAsCompleted={markTodoAsCompleted}
+                handleEditClick={handleEditClick}
+              />
+            </ItemBox>
+          ))}
+        </TodoListView>
+      )}
       <Modal
         isOpen={modalOpen}
         onClose={closeDialogAndCancelEdit}

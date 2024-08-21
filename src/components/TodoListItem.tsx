@@ -21,6 +21,10 @@ const TodoItemSubtitle = styled(Subtitle)<{ $isChecked: boolean }>`
   color: #ffffff53; `}
 `;
 
+const IconBox = styled(Box)`
+  margin-top: 3px;
+`;
+
 export const TodoListItem = ({
   todo,
   index,
@@ -45,7 +49,7 @@ export const TodoListItem = ({
         </TodoItemSubtitle>
       </Box>
 
-      <Box>
+      <IconBox>
         <CheckboxIcon
           isChecked={todo.completed}
           onToggle={toggleTodoCompletion}
@@ -54,7 +58,7 @@ export const TodoListItem = ({
           <EditIcon onEdit={() => handleEditClick(todo.id, todo.title)} />
         )}
         <DeleteIcon onDelete={handleDelete} />
-      </Box>
+      </IconBox>
     </>
   );
 };
